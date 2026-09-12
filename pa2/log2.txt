@@ -1,0 +1,8 @@
+Node started: uuid=780943b2-6029-49c5-821a-40a4963577de
+Recieved: uuid=90eb9c27-e856-4157-af8d-1e285fed9f05, flag=0, greater, 0
+Sent: uuid=90eb9c27-e856-4157-af8d-1e285fed9f05, flag=0
+Recieved: uuid=ed6c45ff-321c-4fc9-9a53-e8ab9ef06007, flag=0, greater, 0
+Sent: uuid=ed6c45ff-321c-4fc9-9a53-e8ab9ef06007, flag=0
+Recieved: uuid=ed6c45ff-321c-4fc9-9a53-e8ab9ef06007, flag=1, greater, 0
+Leader is decided to ed6c45ff-321c-4fc9-9a53-e8ab9ef06007.
+Sent: uuid=ed6c45ff-321c-4fc9-9a53-e8ab9ef06007, flag=1
