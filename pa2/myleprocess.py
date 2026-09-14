@@ -95,6 +95,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_sock:
         with conn:
             self_flag = 0 # whether this process is still trying to find a leader or knows the leader’s ID
             leader_id = uuid.NIL
+            full_data = ""
 
             # Send uuid as the initial message
             message = Message(unique_id, self_flag)
@@ -106,7 +107,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_sock:
                     print(f"[TCP Server] Client disconnected.")
                     break
 
-                message = Message.from_json(data.decode())
+                full_data += data.decode()
+                if not full_data[-1] == '}': # Check for teminating character
+                    continue
+
+                message = Message.from_json(full_data)
+                full_data = "" # Reset for next message
                 compare_result = "greater" if message.uuid > unique_id else "less" if message.uuid < unique_id else "equal"
                 log(log_path, f"Recieved: uuid={message.uuid}, flag={message.flag}, {compare_result}, {self_flag}")
 
